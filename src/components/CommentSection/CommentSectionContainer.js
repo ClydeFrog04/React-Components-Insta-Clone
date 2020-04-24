@@ -7,10 +7,9 @@ import "./Comment.css";
 const CommentSection = props => {
     // Add state for the comments
     const [comments, setComments] = useState(props.comments);
-    console.log("Comments: ", comments);
 
     const submitComment = (comment) =>{
-        setComments(comments + comment);//todo: this... does not work...
+        setComments(comments + comment);//todo: this... does not work... :]
     }
 
     return (
