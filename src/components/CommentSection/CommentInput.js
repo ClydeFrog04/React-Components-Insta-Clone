@@ -8,7 +8,8 @@ const CommentInput = props => {
         <form className="comment-form"
               onSubmit={(event) => {
                   event.preventDefault();//prevent default so we don't lose our new comment, since we don't have any backend code right now
-                  if(comment !== "") props.submitComment(comment);//now we can't post blank comments
+                  if(comment.replace(/ /g, "") !== "") props.submitComment(comment);//now we can't post blank comments.
+                  //note to self: javascript regex pattern is: (/patternHere/optionalFlagsHere, "textToReplaceWith"). compared to java: ("[patternAndFlagsHere]", "textToReplaceWith")
               }}>
             <input
                 type="text"
