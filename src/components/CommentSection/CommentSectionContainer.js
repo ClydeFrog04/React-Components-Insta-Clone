@@ -9,13 +9,16 @@ const CommentSection = props => {
     const [comments, setComments] = useState(props.comments);
 
     const submitComment = (comment) =>{
-        setComments(comments + comment);//todo: this... does not work... :]
+        const newComment = {
+            username: "ClydeFrog04",
+            text: comment,
+        };
+        setComments(comments.concat(newComment));
     }
 
     return (
         <div>
-            {/* map through the comments data and return the Comment component */}
-            {
+            {//map through and add comments to post
                 comments.map((comment, index) => {
                     return <Comment key={index} comment={comment}/>;
                 })
